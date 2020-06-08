@@ -1,4 +1,14 @@
-.login-form {
+.login-page .todo-title {
+  text-align: center;
+}
+.login-page .todo-title h1 {
+  font-weight: bold;
+  font-size: 64px;
+}
+.login-page .todo-title p {
+  padding: 24px;
+}
+.login-page .login-form {
   display: none;
   position: fixed;
   z-index: 1;
@@ -12,7 +22,7 @@
   font-size: 16px;
   padding-top: 60px;
 }
-.login-form .login-content {
+.login-page .login-form .login-content {
   display: block;
   padding: 16px;
   height: 310px;
@@ -22,10 +32,13 @@
   border: 1px solid #df465e;
   width: 40%;
 }
-.login-form .login-content .buttons .join-btn {
+.login-page .login-form .login-content .buttons .join-btn {
   float: right;
 }
-.login-form input[id=username], .login-form input[id=password] {
+.login-page .login-form .cancel-container {
+  padding: 8px;
+}
+.login-page .login-form input[id=username], .login-page .login-form input[id=password] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -33,13 +46,13 @@
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
-.login-form .cancel-container {
+.login-page .login-form .cancel-container {
   text-align: center;
 }
-.login-form .cancel-container .cancel-btn {
+.login-page .login-form .cancel-container .cancel-btn {
   margin: auto;
 }
-.login-form input, .login-form button {
+.login-page .login-form input, .login-page .login-form button {
   font-size: 1rem;
 }
 
@@ -64,15 +77,17 @@
     transform: scale(1);
   }
 }
-.cancel-container {
-  padding: 8px;
-}
-
-.login-button {
+.login-button, .join-button {
+  padding: 16px 0px;
   margin: auto;
-  max-width: 45px;
+  text-align: center;
 }
-.login-button button {
+.login-button .join-paragraph, .join-button .join-paragraph {
+  width: 100%;
+  text-align: left;
+  padding: 24px;
+}
+.login-button button, .join-button button {
   outline: none;
   box-shadow: none;
   border: none;
@@ -80,7 +95,7 @@
   color: white;
   background-color: #df465e;
 }
-.login-button button:hover {
+.login-button button:hover, .join-button button:hover {
   background-color: white;
   color: #df465e;
   border: 1px solid #df465e;

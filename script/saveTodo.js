@@ -23,7 +23,7 @@ function saveTodoLists(todo, filter) {
 }
 
 //get todo from local storage
-function getTodos(){
+function getTodos(){ //take in user to gget right user list
   let todos;
 
   if (localStorage.getItem('filters') === null){

@@ -22,7 +22,7 @@ function getInfo() {
     if (username == objUsers[6].username && password == objUsers[6].passworld) { //changet  o password!!!!!
       console.log("boom");
       getUserTodos(objUsers[6]);
-      window.location.href = "toDo.html";
+      post('../pages/todo.html', {login: username});
     }
     //if no match found, popup window error
     if (i === objUsers.length) {
@@ -62,58 +62,55 @@ function joinTodo() {
   localStorage.setItem('login', JSON.stringify(login));
 
   //create input in to htmlindex
-  console.log(userTodo);
   userTodo.id = obj.username;
-  post('../pages/todo.html', {username: userTodo.id});
+  post('../pages/todo.html', {login: username});
 }
 
 //submit information to todo.html
 function post(path, params, method='post') {
-
-  // The rest of this code assumes you are not using a library.
-  // It can be made less wordy if you use one.
   const form = document.createElement('form');
-  form.method = method;
   form.action = path;
 
   for (const key in params) {
     if (params.hasOwnProperty(key)) {
       const hiddenField = document.createElement('input');
-      hiddenField.type = 'hidden';
+      // hiddenField.type = 'hidden';
       hiddenField.name = key;
       hiddenField.value = params[key];
-
       form.appendChild(hiddenField);
     }
   }
-
   document.body.appendChild(form);
-  console.log(form);
-  form.submit();
+  // form.submit();
 }
 
 
 //get todo from local storage
 function getUserTodos(user){
-  userTodo.id = user.username;
   console.log(userTodo.id);
   let todos;
+
+  userTodo.id = user.username;
   if (localStorage.getItem('todos') === null){
     todos = [];
   } else {
     todos = JSON.parse(localStorage.getItem('todos'));
   }
   console.log(todos);
+  if (localStorage.getItem('filters') === null){
+    todos = [];
+  } else {
+    todos = JSON.parse(localStorage.getItem('filters'));
+  }
   todos.forEach(function(todo) {
     const todoDiv = document.createElement("div");
     todoDiv.classList.add("todo");
-    
     //create li
     var newTodo = document.createElement("li");
     newTodo.classList.add("todo-item");
     //create span in li
     var span = document.createElement("span");
-    span.innerText = todo;
+    span.innerText = todo.todo;
     span.id = "item-span";
     newTodo.appendChild(span);
     todoDiv.appendChild(newTodo);
@@ -136,12 +133,33 @@ function getUserTodos(user){
     deletedButton.classList.add("deleted-btn");
     todoDiv.appendChild(deletedButton);
     
-    //add filter option to class
-    // const optionClass = tagOption;
-    // optionClass.value = optionClass.value.toLowerCase();
-    // todoDiv.classList.toggle(optionClass.value)
-  
+    // add filter option to class
+    todoDiv.classList.toggle(todo.filter)
+
     //append to list
-    todoUserList.appendChild(todoDiv);
+    todoLists.appendChild(todoDiv);
   })
+  //add saved filters to filter
+  addSavedFilters(todos);
+}
+
+
+//stores current user in localStorage to recieve current user's todo list
+window.serialize = function(form) {
+  if (!form || form.nodeName !== "FORM") {
+    return;
+  }
+  let currUser;
+  currUser = [];
+    switch (form.elements[0].nodeName) {
+      case 'INPUT':
+        switch (form.elements[0].type) {
+          case 'text':
+          case 'submit':
+          currUser.push(encodeURIComponent(form.elements[0].value));
+          break;
+        }
+      break;
+    }
+  localStorage.setItem('currUser', JSON.stringify(currUser));
 }
