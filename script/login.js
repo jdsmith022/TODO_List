@@ -3,24 +3,29 @@ For this exercises, username, password, and todolist are saved in localStorage.
 This is very insecure and should not be used unless for such exercises*/
 
 const userTodo = document.getElementsByClassName(".user-todo");
-const userLists = document.getElementsByClassName(".todo-list");
+const username = document.querySelector(".username");
+const passworld = document.querySelector(".password");
+const objUsers = JSON.parse(localStorage.getItem('login', ''));
 
 /*get users ToDo list*/
 function getUserInfo() {
   console.log("getInfo");
-  var username = document.getElementById("username").value;
-  var password = document.getElementById("password").value;
-  let objUsers = JSON.parse(localStorage.getItem('login', ''));
-
-  if (username === null || password === null) {
+  if (username.value === null || password.value === null) {
     swal("Oops!", "Please enter username and password", "error");
+    return;
+  }
+  if (objUsers === null) {
+    swal("Inncorect username or password",
+    "We did not recognize your username or password. \
+    Please join The Ultimate Todo List.",
+    "error");
     return;
   }
   //searches for matching username and password
   for (i = 0; i < objUsers.length; i++) {
     console.log(i, objUsers.length);
-    if (username == objUsers[i].username && password == objUsers[i].password) {
-      post('../pages/todo.html', {login: username});
+    if (username.value == objUsers[i].username && password.value == objUsers[i].password) {
+      post('../pages/todo.html', {login: username.value});
     }
     //if no match found, popup window error
     if (i === objUsers.length - 1) {
@@ -36,12 +41,10 @@ function getUserInfo() {
 /*creates new username and passworld in localStorage and submits username*/
 function joinTodo() {
   console.log("joinTodo");
-  var username = document.getElementById("username").value;
-  var password = document.getElementById("password").value;
   let login;
   let obj;
   
-  if (username === null || password === null) {
+  if (username.value === null || password.value === null) {
     swal("Oops!", "Please enter username and password", "error");
     return;
   }
@@ -55,14 +58,14 @@ function joinTodo() {
   //check for existing user name
   for (i = 0; i < login.length; i++) {
     //if username already exisits, popup window error
-    if (username == login[i].username) {
+    if (username.value == login[i].username) {
       swal("User already exists", "Please choose a different username", "error");
       return;
     }
   }
   //adds user and passworld to localStorage
-  obj["username"] = username;
-  obj["password"] = password;
+  obj["username"] = username.value;
+  obj["password"] = password.value;
   login.push(obj);
   localStorage.setItem("login", JSON.stringify(login));
 

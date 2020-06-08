@@ -1,12 +1,11 @@
 /*Below is  the fuction the retreives the user's saved todo list and
 add their saved filters to select.  */
 
+/*Selectors */
+const currUser = JSON.parse(localStorage.getItem("currUser", ''));
 
 /*sees if user list already exists and has content*/
 function loadUserTodo() {
-	let currUser;
-	
-	currUser = JSON.parse(localStorage.getItem("currUser", ''));
 	if (localStorage.getItem(currUser.toString()) === null) {
 		return;
 	} else {
@@ -17,8 +16,9 @@ function loadUserTodo() {
 
 /*takes found userList in localStorage or created new empty list*/
 function getTodos() {
-	let currUser = JSON.parse(localStorage.getItem("currUser", ''));
 	let todos  = JSON.parse(localStorage.getItem(currUser.toString(), ''));
+
+	console.log(currUser.toString());
 
 	todos.forEach(function (todo) {
 	  const todoDiv = document.createElement("div");
@@ -53,8 +53,7 @@ function getTodos() {
 	  
 	  // add filter option to class
 		todoDiv.id = todo.filter;
-		todoDiv.classList.toggle(todo.filter)
-  
+		
 	  //append to list
 	  todoLists.appendChild(todoDiv);
 	})

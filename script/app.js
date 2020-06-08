@@ -6,7 +6,7 @@ const filterOption = document.querySelector(".filter-todo");
 const tagOption = document.querySelector(".tag-options");
 const editItem = document.querySelector(".todo-item");
 const todoForm = document.querySelector(".todo-form")
-// const user = JSON.parse(localStorage.getItem("currUser", ''));
+const user = JSON.parse(localStorage.getItem("currUser", ''));
 
 
 //Event listeners
@@ -60,7 +60,6 @@ function addTodo(event) {
   //add filter option to class of item
   const optionClass = tagOption;
   optionClass.value = optionClass.value.toLowerCase();
-  todoDiv.classList.toggle(optionClass.value.replace(/ /g, '')); //check that this is okay
   todoDiv.id = optionClass.value;
   
   //append to li item to todo list
@@ -119,7 +118,7 @@ function filterTodo(e) {
         break;
       //filter for user added filters
       case e.target.value:
-        if (todo.classList.contains(e.target.value)){
+        if (todo.id === e.target.value){
           todo.style.display = "flex";
         } else {
           todo.style.display = "none";
@@ -128,7 +127,6 @@ function filterTodo(e) {
       }
   });
 }
-
 
 //add user input filter option to select filter
 function addOption(e){
@@ -153,14 +151,11 @@ function addOption(e){
 
 //edit item in list
 function editListItem(todo){
-  var currUser;
-  var currListState;
   var item = todo.querySelector("li");
   var input = item.querySelector("span");
+  var currListState = JSON.parse(localStorage.getItem(user.toString(), ''));;
   var currSpanState = input.innerText;
 
-	currUser = JSON.parse(localStorage.getItem("currUser", ''));
-  currListState = JSON.parse(localStorage.getItem(currUser.toString(), ''));
   input.contentEditable = "true";
   input.addEventListener("keydown", function (event) {
   //on enter edit becomes false
@@ -170,13 +165,13 @@ function editListItem(todo){
       console.log(item.id);
       for (var i = 0; i < currListState.length; i++) {
         console.log(currListState[i]["todo"], currListState[i]["filter"], currSpanState)
+        //update localStorage
         if (todo.id === currListState[i]["filter"] &&  currSpanState === currListState[i]["todo"]) {
           currListState[i]["todo"] = input.innerText;;
-          localStorage.setItem(currUser.toString(), JSON.stringify(currListState));
+          localStorage.setItem(user.toString(), JSON.stringify(currListState));
           return;
         }
       }
     }
   })
-  //update localStorage
 }
