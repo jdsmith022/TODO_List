@@ -12,34 +12,36 @@
   </head>
   <body>
     <div class="container">
-      <header class="todo-title">
-        <h1>
-          Ultimate Todo List
-        </h1>
-      </header>
-      <div class="user-todo card todo-card">
-        <form class="todo-form">
-          <input type="text" id="list-input" class="todo-input" placeholder="Add to todo list" />
-          <input type="text" class="tag-options" placeholder="Add filter option"/>
-          <button class="todo-button" type="submit">
-            <i class="fas fa-plus-square"></i>
-          </button>
-          <div class="select">
-            <select name="todos" class="filter-todo">
-              <option value="all">All</option>
-              <option value="completed">Completed</option>
-              <option value="uncompleted">Uncompleted</option>
-            </select>
+      <div class="card todo-card">
+        <header class="todo-title">
+          <h1>
+           Life's Todo List
+          </h1>
+        </header>
+        <div class="user-todo">
+          <form class="todo-form">
+            <input type="text" id="list-input" class="todo-input" placeholder="Add to todo list" />
+            <input type="text" class="tag-options" placeholder="Add filter option"/>
+            <button class="todo-button" type="submit">
+              <i class="fas fa-plus-square"></i>
+            </button>
+            <div class="select">
+              <select name="todos" class="filter-todo">
+                <option value="all">All</option>
+                <option value="completed">Completed</option>
+                <option value="uncompleted">Uncompleted</option>
+              </select>
+            </div>
+          </form>
+          <div class="todo-container">
+            <ul class="todo-list"></ul>
           </div>
-        </form>
-        <div class="todo-container">
-          <ul class="todo-list"></ul>
         </div>
-      </div>
-     </div>
-    <!-- <div class="logout-button">
-      <button onclick="document.getElementById('login').style.display='flex'">Log out</button>
-    </div> -->
+       </div>
+      <!-- <div class="logout-button">
+        <button onclick="document.getElementById('login').style.display='flex'">Log out</button>
+      </div> -->
+    </div>
     <script src="../script/saveTodo.js"></script>
     <script src="../script/app.js"></script>
     <script src="../script/login.js"></script>
