@@ -60,7 +60,7 @@ function addTodo(event) {
   //add filter option to class of item
   const optionClass = tagOption;
   optionClass.value = optionClass.value.toLowerCase();
-  todoDiv.classList.toggle(optionClass.value)
+  todoDiv.classList.toggle(optionClass.value.replace(/ /g, '')); //check that this is okay
   todoDiv.id = optionClass.value;
   
   //append to li item to todo list
