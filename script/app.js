@@ -36,6 +36,7 @@ function addTodo(event) {
   var span = document.createElement("span");
   span.innerText = todoInput.value;
   span.id = "item-span";
+  span.contentEditable = "false";
   newTodo.appendChild(span);
   todoDiv.appendChild(newTodo);
   
@@ -152,13 +153,28 @@ function addOption(e){
 
 //edit item in list
 function editListItem(todo){
-  // var listItem = todo.children;
+  console.log(todo);
   var item = todo.querySelector("li");
-  var input = item.getElementsByTagName('span');
+  var input = item.querySelector("span");
+  console.log(input);
 
-  var spanText = input.text(); // get span input 
-  var newInput = "<input value=" + spanText + ">"; // set it to input for edit
-  span.html(newInput); // paste inside span
+  input.contentEditable = "true";
+  input.addEventListener("keydown", function (event) {
+    console.log(event.keyCode);
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      var editedItem = input.innerText;
+      console.log(editedItem);
+      input.contentEditable = "false";
+    }
+  })
+  // input.contentEditable = "false";
+
+
+
+  // var spanText = input.text(); // get span input 
+  // var newInput = "<input value=" + spanText + ">"; // set it to input for edit
+  // span.html(newInput); // paste inside span
 
   // input.disabled = false;
   // input.className = " activeTextInput ";

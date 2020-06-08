@@ -18,13 +18,16 @@ function getUserInfo() {
   }
   //searches for matching username and password
   for (i = 0; i < objUsers.length; i++) {
+    console.log(i, objUsers.length);
     if (username == objUsers[i].username && password == objUsers[i].password) {
       post('../pages/todo.html', {login: username});
     }
     //if no match found, popup window error
-    if (i === objUsers.length) {
-      console.log("there");
-      swal("Inncorect username or password", "We did not recognize your username or passworld. Please reenter correct username and password or join The Ultimate Todo List.", "error");
+    if (i === objUsers.length - 1) {
+      swal("Inncorect username or password",
+      "We did not recognize your username or password. \
+      Please enter correct username and password or join The Ultimate Todo List.",
+      "error");
       return;
     }
   }
@@ -38,6 +41,10 @@ function joinTodo() {
   let login;
   let obj;
   
+  if (username === null || password === null) {
+    swal("Oops!", "Please enter username and password", "error");
+    return;
+  }
   obj = {};
   //check is there are username and passwords stored in login localStorage
   if (localStorage.getItem('login') === null) {

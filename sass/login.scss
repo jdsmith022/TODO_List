@@ -25,7 +25,7 @@
     .login-content {
       display: block;
       padding: 16px;
-      height: 310px;
+      height: 352px;
       background-color: #fefefe;
       margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
       border: 1px solid #df465e;
@@ -49,8 +49,9 @@
     }
     .cancel-container {
       text-align: center;
+      padding-top: 40px;
       .cancel-btn {
-        margin:auto;
+        margin: auto;
       }
     }
     input, button {
@@ -59,8 +60,6 @@
   }
   
 }
-
-
 
 
 .expand {
@@ -80,29 +79,31 @@
 
 
 
-  .login-button, .join-button {
-    padding: 16px 0px;
-    margin: auto;
-    text-align: center;
-    .join-paragraph {
-      width: 100%;
-      text-align: left;
-      padding: 24px;
-    }
-    button {
-      outline: none;
-      box-shadow: none;
-      border: none;
-      padding: 8px 16px;
-      color: white;
-      background-color: #df465e;
-      &:hover {
-        background-color: white;
-        color: #df465e;
-        border: 1px solid #df465e;
-      }
-    }
+.login-button, .join-button {
+  padding: 16px 0px;
+  margin: auto;
+  text-align: center;
+  .join-paragraph {
+    width: 100%;
+    text-align: left;
+    padding: 24px;
   }
+}
+
+  button {
+  -webkit-appearance: none !important;
+  outline: none;
+  box-shadow: none;
+  border: 1px solid #df465e;
+  padding: 8px 16px;
+  color: white;
+  background-color: #df465e;
+  &:hover {
+    background-color: white;
+    color: #df465e;
+    border: 1px solid #df465e;
+  }
+}
 
 .swal-button {
   background-color: #df465e !important;

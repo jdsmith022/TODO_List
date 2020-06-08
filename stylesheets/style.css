@@ -11,11 +11,14 @@ body {
   background-image: 147deg, #f9fcff 74%, #f2f8ff 0%;
 }
 
-.todo-card {
+.container {
+  padding-top: 100px;
+}
+.container .todo-card {
   background-image: linear-gradient(120deg, #e0455f, #44000b);
   color: white;
 }
-.todo-card header {
+.container .todo-card header {
   font-size: 1.5rem;
   padding: 56px;
   padding-top: 48px;
@@ -23,27 +26,31 @@ body {
   align-items: center;
   justify-content: center;
 }
-
-.container {
-  padding-top: 100px;
+.container .todo-card .user-todo {
+  width: 80%;
+  margin: auto;
+  margin-top: -72px;
 }
-
-form {
+.container .todo-card .user-todo .todo-form {
   padding-top: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-form input, form button {
+.container .todo-card .user-todo .todo-form ::placeholder {
+  font-size: 1rem !important;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+.container .todo-card .user-todo .todo-form input, .container .todo-card .user-todo .todo-form button {
   padding: 0.5rem;
   font-size: 1.25rem;
   background: white;
   border: none;
   outline: none;
 }
-
-form button {
+.container .todo-card .user-todo .todo-form button {
   color: #600c1b;
   background: white;
   cursor: pointer;
@@ -51,44 +58,30 @@ form button {
   border: none;
   outline: none;
 }
-
-form button:hover {
+.container .todo-card .user-todo .todo-form button:hover {
   background: #e0455f;
   color: white;
   border: none;
   outline: none;
 }
-
-.user-todo {
-  width: 80%;
-  margin: auto;
-  margin-top: -72px;
-}
-.user-todo .todo-form ::placeholder {
-  font-size: 1rem !important;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-}
-
-.todo-container {
+.container .todo-card .todo-container {
   justify-content: center;
   align-items: center;
   display: flex;
 }
-.todo-container .todo-list {
+.container .todo-card .todo-container .todo-list {
   list-style: none;
   min-width: 40%;
   padding-bottom: 42px;
 }
-.todo-container .todo-list .completed {
+.container .todo-card .todo-container .todo-list .completed {
   text-decoration: line-through;
   opacity: 0.5;
 }
-.todo-container .todo-list .todo-item {
+.container .todo-card .todo-container .todo-list .todo-item {
   padding: 0rem 0.5rem;
 }
-.todo-container .todo-list .todo {
+.container .todo-card .todo-container .todo-list .todo {
   margin: 0.5rem;
   background: white;
   color: black;
@@ -98,12 +91,12 @@ form button:hover {
   align-items: center;
   transition: all 0.5s ease;
 }
-.todo-container .todo-list .todo li {
+.container .todo-card .todo-container .todo-list .todo li {
   flex: 1;
 }
-.todo-container .todo-list .todo .completed-btn,
-.todo-container .todo-list .todo .deleted-btn,
-.todo-container .todo-list .todo .edit-btn {
+.container .todo-card .todo-container .todo-list .todo .completed-btn,
+.container .todo-card .todo-container .todo-list .todo .deleted-btn,
+.container .todo-card .todo-container .todo-list .todo .edit-btn {
   background: #df465e;
   background-color: white;
   border: none;
@@ -111,43 +104,44 @@ form button:hover {
   cursor: pointer;
   font-size: 1rem;
 }
-.todo-container .todo-list .todo .completed-btn {
+.container .todo-card .todo-container .todo-list .todo .completed-btn {
   color: #059605;
 }
-.todo-container .todo-list .todo .completed-btn:hover {
+.container .todo-card .todo-container .todo-list .todo .completed-btn:hover {
   background-color: #059605;
   color: white;
 }
-.todo-container .todo-list .todo .edit-btn {
+.container .todo-card .todo-container .todo-list .todo .edit-btn {
   color: #38c0e9;
 }
-.todo-container .todo-list .todo .edit-btn:hover {
+.container .todo-card .todo-container .todo-list .todo .edit-btn:hover {
   background-color: #38c0e9;
   color: white;
 }
-.todo-container .todo-list .todo .deleted-btn {
+.container .todo-card .todo-container .todo-list .todo .deleted-btn {
   color: #d12e2e;
 }
-.todo-container .todo-list .todo .deleted-btn:hover {
+.container .todo-card .todo-container .todo-list .todo .deleted-btn:hover {
   background-color: #d12e2e;
   color: white;
 }
-
-.options {
-  min-width: 10%;
-  margin: 0.5rem;
-  display: flex;
+.container .logout-button {
+  padding: 16px 0px;
+  margin: auto;
+  text-align: center;
 }
-.options ::placeholder {
-  font-size: 1rem !important;
+.container .logout-button button {
+  outline: none;
+  box-shadow: none;
+  border: none;
+  padding: 8px 16px;
+  color: white;
+  background-color: #df465e;
 }
-.options .tag-options {
-  color: black;
-  background: white;
-  font-size: 1.25rem;
-  align-items: center;
-  justify-content: space-between;
-  transition: all 0.5s ease;
+.container .logout-button button:hover {
+  background-color: white;
+  color: #df465e;
+  border: 1px solid #df465e;
 }
 
 select {
@@ -157,6 +151,10 @@ select {
   outline: none !important;
   box-shadow: none !important;
   border: none !important;
+  color: #df465e;
+  width: 10rem;
+  cursor: pointer;
+  padding: 0.7rem;
 }
 
 :-webkit-autofill {
@@ -168,15 +166,7 @@ select {
   position: relative;
   overflow: hidden;
 }
-
-select {
-  color: #df465e;
-  width: 10rem;
-  cursor: pointer;
-  padding: 0.7rem;
-}
-
-.select::after {
+.select:after {
   content: "▾";
   position: absolute;
   background: #600c1b;
@@ -185,11 +175,26 @@ select {
   padding: 0.7rem;
   pointer-events: none;
 }
-
 .select:hover::after {
   color: white;
   background: #df465e;
   transition: all 0.3 ease;
+}
+.select .options {
+  min-width: 10%;
+  margin: 0.5rem;
+  display: flex;
+}
+.select .options ::placeholder {
+  font-size: 1rem !important;
+}
+.select .options .tag-options {
+  color: black;
+  background: white;
+  font-size: 1.25rem;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.5s ease;
 }
 
 .fall {
@@ -201,6 +206,11 @@ select {
 .fa-check,
 .fa-trash {
   pointer-events: none;
+}
+
+span[contenteditable=true] {
+  padding: 4px;
+  outline: 1px solid #df465e;
 }
 
 /*# sourceMappingURL=style.css.map */

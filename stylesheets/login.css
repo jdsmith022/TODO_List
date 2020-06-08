@@ -25,7 +25,7 @@
 .login-page .login-form .login-content {
   display: block;
   padding: 16px;
-  height: 310px;
+  height: 352px;
   background-color: #fefefe;
   margin: 5% auto 15% auto;
   /* 5% from the top, 15% from the bottom and centered */
@@ -48,6 +48,7 @@
 }
 .login-page .login-form .cancel-container {
   text-align: center;
+  padding-top: 40px;
 }
 .login-page .login-form .cancel-container .cancel-btn {
   margin: auto;
@@ -87,15 +88,17 @@
   text-align: left;
   padding: 24px;
 }
-.login-button button, .join-button button {
+
+button {
+  -webkit-appearance: none !important;
   outline: none;
   box-shadow: none;
-  border: none;
+  border: 1px solid #df465e;
   padding: 8px 16px;
   color: white;
   background-color: #df465e;
 }
-.login-button button:hover, .join-button button:hover {
+button:hover {
   background-color: white;
   color: #df465e;
   border: 1px solid #df465e;

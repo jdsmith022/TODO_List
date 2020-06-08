@@ -1,8 +1,6 @@
-function logoutUser() {
-	let currUser;
+/*Below function logs out user and returns them to login page */
 
-	currUser = JSON.parse(localStorage.getItem('currUser'));
-	currUser.length = 0;
-	currUser.push(currUser);
-  	localStorage.setItem('currUser', JSON.stringify(currUser))
+function logoutUser() {
+	window.localStorage.removeItem("currUser");
+	window.location.replace('../pages/index.html');
 }
