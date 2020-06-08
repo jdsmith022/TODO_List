@@ -18,11 +18,13 @@ function loadUserTodo() {
 function getTodos() {
 	let todos  = JSON.parse(localStorage.getItem(currUser.toString(), ''));
 
-	console.log(currUser.toString());
-
 	todos.forEach(function (todo) {
 	  const todoDiv = document.createElement("div");
-	  todoDiv.classList.add("todo");
+		todoDiv.classList.add("todo");
+		//if todo is completed add complete to class
+		if (todo["completed"] === "true") {
+			todoDiv.classList.add("completed");
+		}
 	  //create li
 	  var newTodo = document.createElement("li");
 	  newTodo.classList.add("todo-item");
@@ -53,7 +55,7 @@ function getTodos() {
 	  
 	  // add filter option to class
 		todoDiv.id = todo.filter;
-		
+
 	  //append to list
 	  todoLists.appendChild(todoDiv);
 	})

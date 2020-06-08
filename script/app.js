@@ -88,6 +88,7 @@ function buttonCheck (e) {
   if (item.classList[0] === "completed-btn") {
     const todo = item.parentElement;
     todo.classList.toggle("completed");
+    updateCompleted(todo);
   }
   if (item.classList[0] === "edit-btn") {
     const todo = item.parentElement;
@@ -153,7 +154,7 @@ function addOption(e){
 function editListItem(todo){
   var item = todo.querySelector("li");
   var input = item.querySelector("span");
-  var currListState = JSON.parse(localStorage.getItem(user.toString(), ''));;
+  var currListState = JSON.parse(localStorage.getItem(user.toString(), ''));
   var currSpanState = input.innerText;
 
   input.contentEditable = "true";
@@ -164,14 +165,33 @@ function editListItem(todo){
       input.contentEditable = "false";
       console.log(item.id);
       for (var i = 0; i < currListState.length; i++) {
-        console.log(currListState[i]["todo"], currListState[i]["filter"], currSpanState)
         //update localStorage
         if (todo.id === currListState[i]["filter"] &&  currSpanState === currListState[i]["todo"]) {
-          currListState[i]["todo"] = input.innerText;;
+          currListState[i]["todo"] = input.innerText;
           localStorage.setItem(user.toString(), JSON.stringify(currListState));
           return;
         }
       }
     }
   })
+}
+
+//edit item in list
+function updateCompleted(todo){
+  let spanState = todo.querySelector("span").innerText;
+  let currListState = JSON.parse(localStorage.getItem(user.toString(), ''));
+
+  console.log("here");
+  for (var i = 0; i < currListState.length; i++) {
+    //update localStorage of completed to true or false
+    if (todo.id === currListState[i]["filter"] && spanState === currListState[i]["todo"]) {
+      if (currListState[i]["completed"] === "false") {
+        currListState[i]["completed"] = "true";
+      } else {
+        currListState[i]["completed"] = "false";
+      }
+      localStorage.setItem(user.toString(), JSON.stringify(currListState));
+      return;
+    }
+  }
 }

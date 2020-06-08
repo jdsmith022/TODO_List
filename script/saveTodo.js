@@ -4,12 +4,14 @@
 const todoLists = document.querySelector(".todo-list");
 const savedFilterOptions = document.querySelector(".filter-todo");
 const userName = JSON.parse(localStorage.getItem("currUser", ''));
+const filterOptions = document.querySelector(".filter-todo");
 
 /*save todo list to local storage*/
 function saveTodoLists(todo, filter) {
   let todos;
   let obj;
 
+  console.log(todo, filter);
   obj = {};
   if (localStorage.getItem(userName.toString()) === null ) {
     console.log("here");
@@ -19,6 +21,7 @@ function saveTodoLists(todo, filter) {
   }
   obj["todo"] = todo.value;
   obj["filter"] = filter.value;
+  obj["completed"] = "false";
   todos.push(obj);
   localStorage.setItem(userName.toString(), JSON.stringify(todos));
 }
@@ -29,6 +32,7 @@ function removeLocalTodos(todo){
   let todos;
 
   console.log(todo);
+  removeUnusedFilter(todo);
   if (localStorage.getItem(userName.toString()) === null) {
     todos = [];
   } else {
@@ -40,3 +44,22 @@ function removeLocalTodos(todo){
   todos = JSON.stringify(todos)
   localStorage.setItem(userName.toString(), todos);
 }
+
+// /*Remove filters that are not longer is use from filter options*/
+// function removeUnusedFilter(todo){
+//   const options = filterOption.children;
+//   let count;
+
+//   count = 0;
+//   console.log(options, filterOption, todo);
+//   for (var i = 0; i < filterOption.length; i++) {
+//     console.log(filterOption[i].value, todo.id);
+//     if (filterOption[i].value === todo.id) {
+//       count++
+//     }
+//   }
+//   console.log(count);
+//   if (count === 1) {
+//     filterOption[i] == null;
+//   }
+// }
