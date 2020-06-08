@@ -4,7 +4,6 @@
 const todoLists = document.querySelector(".todo-list");
 const savedFilterOptions = document.querySelector(".filter-todo");
 const userName = JSON.parse(localStorage.getItem("currUser", ''));
-const savedItems = JSON.parse(localStorage.getItem(userName.toString(), ''));
 
 /*save todo list to local storage*/
 function saveTodoLists(todo, filter) {
@@ -39,6 +38,5 @@ function removeLocalTodos(todo){
   const todoIndex = todo.children[0].innerText;
   todos.splice(todos.indexOf(todoIndex), 1);
   todos = JSON.stringify(todos)
-
-  localStorage.setItem(userName.toString(), JSON.stringify(todos));
+  localStorage.setItem(userName.toString(), todos);
 }

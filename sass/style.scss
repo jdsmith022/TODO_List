@@ -48,6 +48,10 @@ body {
           border: none;
           outline: none;
           border-radius: 25px;
+          button:focus {
+            outline: none;
+            box-shadow: none;
+          }
         }
         button {
           color: #600c1b;
@@ -56,6 +60,10 @@ body {
           transition: all 0.3 ease;
           border: none;
           outline: none;
+          button:focus {
+            outline: none;
+            box-shadow: none;
+          }
           &:hover {
             background:  #e0455f;
             color: white;

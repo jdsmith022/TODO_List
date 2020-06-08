@@ -15,45 +15,55 @@
     <div class="container login-page">
       <header class="todo-title">
         <h1>
-          Ultimate Todo List
+          Jessica's Todo List
         </h1>
         <p>
-          Welcome back!
+          Write, save, and filter through you personal lists and check off
         </p>
       </header>
-      <div class="login-button">
-        <div>
-          <button onclick="document.getElementById('login').style.display='flex'">Login</button>
+      <div class="user-welcome">
+        <div class="card-content">
+          <div class="join-button card">
+            <div class="card-padding">
+              <p class="join-paragraph">
+                New to the Jessica's Todo List?
+              </p>
+              <div>
+                <button onclick="onJoin()">Join</button>
+              </div>
+             </div>
+          </div>
         </div>
-      </div>
-      <div class="join-button">
-        <p class="join-paragraph">
-          New to the Ultimate Todo List? It's easy to make a list of all your todo's on the Ultimate Todo List.
-          You can mark tasks as completed, edit tasks, and delete them when you no longer need it.
-          Add filters to each item and search by their filter. 
-          You can also mark and search for all tasks you have completed to see the progress you are making!
-        </p>
-        <div>
-          <button onclick="document.getElementById('login').style.display='flex'">Join</button>
+        <div class="card-content">
+          <div class="login-button card">
+            <div class="card-padding">
+              <p>
+                Already have a list started?
+              </p>
+              <div>
+                <button onclick="onLogin()">User Login</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div id="login" class="login-form" action="post">
-        <form class="login-content expand" onchange="serialize(this)">
+        <form class="login-content expand" autocomplete="off" onchange="serialize(this)">
           <label for="unm"><strong>Username</strong></label>
           <input class="username" placeholder="Enter username" name="unm" id="username" required>
           <label for="unm"><strong>Password</strong></label>
-          <input class="password" placeholder="Enter password" name="pwd" id="password" required>
+          <input type="password" class="password" placeholder="Enter password" name="pwd" id="password" required>
           <div class="buttons">
             <button type="button" id="login-btn" class="login-btn" onclick="getUserInfo()">Log In</input>
-            <button type="button" class="join-btn" onclick="joinTodo()">Join</button>
+            <button type="button" id="join-btn" class="join-btn" onclick="joinTodo()">Join</button>
           </div>
           <div class="cancel-container">
             <button type="button" onclick="document.getElementById('login').style.display='none'" class="cancel-btn">Cancel</button>
         </form>
       </div>
     </div>
-    <script src="../script/saveTodo.js"></script>
     <script src="../script/login.js"></script>
+    <script src="../script/saveTodo.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   </body>
 </html>

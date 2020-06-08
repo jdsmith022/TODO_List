@@ -54,6 +54,10 @@ body {
   outline: none;
   border-radius: 25px;
 }
+.container .todo-card .user-todo .todo-form input button:focus, .container .todo-card .user-todo .todo-form button button:focus {
+  outline: none;
+  box-shadow: none;
+}
 .container .todo-card .user-todo .todo-form button {
   color: #600c1b;
   background: white;
@@ -61,6 +65,10 @@ body {
   transition: all 0.3 ease;
   border: none;
   outline: none;
+}
+.container .todo-card .user-todo .todo-form button button:focus {
+  outline: none;
+  box-shadow: none;
 }
 .container .todo-card .user-todo .todo-form button:hover {
   background: #e0455f;

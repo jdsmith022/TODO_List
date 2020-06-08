@@ -6,10 +6,35 @@
       font-size: 64px;
     }
     p {
-      padding: 24px;
+      padding: 36px;
     }
   }
-  .login-form {
+  .user-welcome {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    .card-content {
+      display: flex;
+      padding: 16px;
+      p {
+        padding: 24px;
+      }
+      .card {
+        border-radius: 10px;
+        border: 1.5px solid #df465e;
+        box-shadow: 5px 10px #a7a1a127;;
+      }
+      .login-button, .join-button {
+        padding: 16px 0px;
+        margin: auto;
+        .join-paragraph {
+          width: 100%;
+          padding: 24px;
+        }
+      }
+    }
+  }
+  .login-form, .join-form {
     display: none;
     position: fixed;
     z-index: 1;
@@ -22,7 +47,7 @@
     background-color: rgba(0,0,0,0.4);
     font-size: 16px;
     padding-top: 60px;
-    .login-content {
+    .login-content, .join-content {
       display: block;
       padding: 16px;
       height: 352px;
@@ -31,27 +56,25 @@
       border: 1px solid #df465e;
       width: 40%;
       .buttons {
-        .join-btn {
+        outline: none;
+        text-align: center;
+      }
+      input[id=username], input[id=password] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+      .cancel-container {
+        padding: 8px;
+        text-align: center;
+        padding-top: 40px;
+        .cancel-btn {
+          margin: auto;
           float: right;
         }
-      }
-    }
-    .cancel-container {
-      padding: 8px;
-    }
-    input[id=username], input[id=password] {
-      width: 100%;
-      padding: 12px 20px;
-      margin: 8px 0;
-      display: inline-block;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
-    }
-    .cancel-container {
-      text-align: center;
-      padding-top: 40px;
-      .cancel-btn {
-        margin: auto;
       }
     }
     input, button {
@@ -77,19 +100,6 @@
   to {transform: scale(1)}
 }
 
-
-
-.login-button, .join-button {
-  padding: 16px 0px;
-  margin: auto;
-  text-align: center;
-  .join-paragraph {
-    width: 100%;
-    text-align: left;
-    padding: 24px;
-  }
-}
-
   button {
   -webkit-appearance: none !important;
   outline: none;
@@ -98,11 +108,20 @@
   padding: 8px 16px;
   color: white;
   background-color: #df465e;
+  border-radius: 25px;
+  font-size: 1.25rem;
+  outline: none;
   &:hover {
     background-color: white;
     color: #df465e;
     border: 1px solid #df465e;
+    outline: none;
   }
+}
+
+p {
+  font-size: 1.3rem;
+  margin-bottom: 0;
 }
 
 .swal-button {

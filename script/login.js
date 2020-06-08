@@ -7,9 +7,28 @@ const username = document.querySelector(".username");
 const passworld = document.querySelector(".password");
 const objUsers = JSON.parse(localStorage.getItem('login', ''));
 
+/*Shows window with only login button */
+function onLogin() {
+  const form = document.getElementById('login');
+  form.style.display = "flex";
+  const join = document.getElementById('join-btn');
+  join.style.display = "none";
+  const login = document.getElementById('login-btn');
+  login.style.display = "flex";
+}
+
+/*Shows window with only join button */
+function onJoin() {
+  const form = document.getElementById('login');
+  form.style.display = "flex";
+  const join = document.getElementById('join-btn');
+  join.style.display = "flex";
+  const login = document.getElementById('login-btn');
+  login.style.display = "none";
+}
+
 /*get users ToDo list*/
 function getUserInfo() {
-  console.log("getInfo");
   if (username.value === null || password.value === null) {
     swal("Oops!", "Please enter username and password", "error");
     return;
@@ -40,7 +59,6 @@ function getUserInfo() {
 
 /*creates new username and passworld in localStorage and submits username*/
 function joinTodo() {
-  console.log("joinTodo");
   let login;
   let obj;
   
