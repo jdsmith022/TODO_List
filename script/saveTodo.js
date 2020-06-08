@@ -40,7 +40,6 @@ function getTodos(){
     //create span in li
     var span = document.createElement("span");
     span.innerText = todo.todo;
-    console.log(span.innerText);
     span.id = "item-span";
     newTodo.appendChild(span);
     todoDiv.appendChild(newTodo);
@@ -66,7 +65,6 @@ function getTodos(){
     // add filter option to class
     todoDiv.classList.toggle(todo.filter)
 
-    
     //append to list
     todoLists.appendChild(todoDiv);
   })
@@ -89,40 +87,22 @@ function removeLocalTodos(todo){
   localStorage.setItem("filters", todos);
 }
 
-//add user input filter option to select filter
+//add user input filter option to select 
 function addSavedFilters(filters){
-  console.log(filters);
-  console.log(savedFilterOptions);
   const options = savedFilterOptions.children;
-  console.log(options);
+
   filters.forEach(function (filter) {
-    for (var i = 0; i < options.length; i++) {
-      for (var j = 0; j < filter.length; j++) {
-        if (filter[j].value != options[i].value) {
-          var newOption = document.createElement("option");
-          newOption.innerText = filter.value;
-          newOption.value = filter.value;
-          savedFilterOptions.appendChild(newOption);
-        }
+    for (var j = 0; j < options.length; j++) {
+      if (options[j].value == filter.filter)
+        break;
+      if (options[j].value != filters.filter && j == options.length - 1) {
+
+        var newOption = document.createElement("option");
+        newOption.innerText = filter.filter;
+        newOption.value = filter.filter;
+        savedFilterOptions.appendChild(newOption);
+        j = 0;
       }
     }
   });
-  // const options = filterOption.children;
-  // tagOption.value = tagOption.value.toLowerCase();
-  // if (tagOption === "")
-  //   return;
-  // for (var i = 0; i < options.length; i++) {
-  //   if (options[i].textContent === tagOption.value){
-  //     tagOption.value = "";
-  //     return;
-  //   }
-  // }
-  // var newOption = document.createElement("option");
-  // newOption.innerText = tagOption.value;
-  // newOption.innerText = newOption.innerText.toLowerCase();
-  // newOption.value = tagOption.value;
-  // newOption.value = newOption.value.toLowerCase();
-  // filterOption.appendChild(newOption);
-  // console.log(todoInput.value);
-  // tagOption.value = "";
 }

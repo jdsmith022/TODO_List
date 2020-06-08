@@ -150,17 +150,14 @@ function addOption(e){
   newOption.value = tagOption.value;
   newOption.value = newOption.value.toLowerCase();
   filterOption.appendChild(newOption);
-  console.log(todoInput.value);
   tagOption.value = "";
 }
 
 //edit item in list
 function editListItem(todo){
-  console.log(todo);
   // var listItem = todo.children;
   var item = todo.querySelector("li");
   var input = item.getElementsByTagName('span');
-  console.log(input);
 
   var spanText = input.text(); // get span input 
   var newInput = "<input value=" + spanText + ">"; // set it to input for edit
