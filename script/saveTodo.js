@@ -28,15 +28,18 @@ function saveTodoLists(todo, filter) {
 /*remove todo form local storage*/
 function removeLocalTodos(todo){
   let todos;
-  if (localStorage.getItem("todos") === null) {
+  let user;
+
+  console.log(todo);
+  user = JSON.parse(localStorage.getItem("currUser", ''));
+  if (localStorage.getItem("todo") === null) {
     todos = [];
   } else {
-    todos = JSON.parse(localStorage.getItem("todos"));
+    todos = JSON.parse(localStorage.getItem(user.toString()));
   }
   localStorage.setItem("todos", JSON.stringify(todos));
   const todoIndex = todo.children[0].innerText;
   todos.splice(todos.indexOf(todoIndex), 1);
   todos = JSON.stringify(todos)
-  localStorage.setItem("todos", todos);
+  localStorage.setItem(user.toString(), JSON.stringify(todos));
 }
-

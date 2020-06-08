@@ -17,14 +17,9 @@ function loadUserTodo() {
 
 /*takes found userList in localStorage or created new empty list*/
 function getTodos() {
-	let todos;
-	let currUser;
-	todos = [];
-  
-	currUser = JSON.parse(localStorage.getItem("currUser", ''));
-	todos = JSON.parse(localStorage.getItem(currUser.toString(), ''));
-	console.log(todos);
-	// todos = todos.childNodes;
+	let currUser = JSON.parse(localStorage.getItem("currUser", ''));
+	let todos  = JSON.parse(localStorage.getItem(currUser.toString(), ''));
+
 	todos.forEach(function (todo) {
 	  const todoDiv = document.createElement("div");
 	  todoDiv.classList.add("todo");
@@ -57,7 +52,8 @@ function getTodos() {
 	  todoDiv.appendChild(deletedButton);
 	  
 	  // add filter option to class
-	  todoDiv.classList.toggle(todo.filter)
+		todoDiv.id = todo.filter;
+		todoDiv.classList.toggle(todo.filter)
   
 	  //append to list
 	  todoLists.appendChild(todoDiv);

@@ -43,12 +43,16 @@ body {
   justify-content: center;
   margin: auto;
 }
+.container .todo-card .user-todo .todo-form .input-box {
+  padding: 8px;
+}
 .container .todo-card .user-todo .todo-form input, .container .todo-card .user-todo .todo-form button {
   padding: 0.5rem;
   font-size: 1.25rem;
   background: white;
   border: none;
   outline: none;
+  border-radius: 25px;
 }
 .container .todo-card .user-todo .todo-form button {
   color: #600c1b;
@@ -90,6 +94,7 @@ body {
   justify-content: space-between;
   align-items: center;
   transition: all 0.5s ease;
+  border-radius: 25px;
 }
 .container .todo-card .todo-container .todo-list .todo li {
   flex: 1;
@@ -155,6 +160,7 @@ select {
   width: 10rem;
   cursor: pointer;
   padding: 0.7rem;
+  border-radius: 25px;
 }
 
 :-webkit-autofill {
@@ -165,6 +171,7 @@ select {
   margin: 1rem;
   position: relative;
   overflow: hidden;
+  border-radius: 25px;
 }
 .select:after {
   content: "▾";
@@ -210,7 +217,8 @@ select {
 
 span[contenteditable=true] {
   padding: 4px;
-  outline: 1px solid #df465e;
+  border: 1px solid #df465e;
+  border-radius: 11px;
 }
 
 /*# sourceMappingURL=style.css.map */

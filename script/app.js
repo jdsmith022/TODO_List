@@ -6,6 +6,7 @@ const filterOption = document.querySelector(".filter-todo");
 const tagOption = document.querySelector(".tag-options");
 const editItem = document.querySelector(".todo-item");
 const todoForm = document.querySelector(".todo-form")
+// const user = JSON.parse(localStorage.getItem("currUser", ''));
 
 
 //Event listeners
@@ -18,8 +19,6 @@ filterOption.addEventListener("change", filterTodo);
 //Functions
 function addTodo(event) {
   //prevent form from submitting
-
-  console.log("hello there friend");
   event.preventDefault();
   
   //todo div for item
@@ -62,6 +61,7 @@ function addTodo(event) {
   const optionClass = tagOption;
   optionClass.value = optionClass.value.toLowerCase();
   todoDiv.classList.toggle(optionClass.value)
+  todoDiv.id = optionClass.value;
   
   //append to li item to todo list
   todoList.appendChild(todoDiv);
@@ -153,29 +153,30 @@ function addOption(e){
 
 //edit item in list
 function editListItem(todo){
-  console.log(todo);
+  var currUser;
+  var currListState;
   var item = todo.querySelector("li");
   var input = item.querySelector("span");
-  console.log(input);
+  var currSpanState = input.innerText;
 
+	currUser = JSON.parse(localStorage.getItem("currUser", ''));
+  currListState = JSON.parse(localStorage.getItem(currUser.toString(), ''));
   input.contentEditable = "true";
   input.addEventListener("keydown", function (event) {
-    console.log(event.keyCode);
+  //on enter edit becomes false
     if (event.keyCode === 13) {
       event.preventDefault();
-      var editedItem = input.innerText;
-      console.log(editedItem);
       input.contentEditable = "false";
+      console.log(item.id);
+      for (var i = 0; i < currListState.length; i++) {
+        console.log(currListState[i]["todo"], currListState[i]["filter"], currSpanState)
+        if (todo.id === currListState[i]["filter"] &&  currSpanState === currListState[i]["todo"]) {
+          currListState[i]["todo"] = input.innerText;;
+          localStorage.setItem(currUser.toString(), JSON.stringify(currListState));
+          return;
+        }
+      }
     }
   })
-  // input.contentEditable = "false";
-
-
-
-  // var spanText = input.text(); // get span input 
-  // var newInput = "<input value=" + spanText + ">"; // set it to input for edit
-  // span.html(newInput); // paste inside span
-
-  // input.disabled = false;
-  // input.className = " activeTextInput ";
+  //update localStorage
 }
