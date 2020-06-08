@@ -1,27 +1,24 @@
+/*Below are functions to handle login and join buttons. 
+For this exercises, username, password, and todolist are saved in localStorage.
+This is very insecure and should not be used unless for such exercises*/
+
 const userTodo = document.getElementsByClassName(".user-todo");
-const todoUserList = document.getElementsByClassName(".todo-list");
-// var form = document.querySelector(".login-content");
+const userLists = document.getElementsByClassName(".todo-list");
 
-//Event listeners
-document.addEventListener('DOMContentLoaded', getUserTodos);
-
-
-//get users ToDo list
-function getInfo() {
+/*get users ToDo list*/
+function getUserInfo() {
   console.log("getInfo");
   var username = document.getElementById("username").value;
   var password = document.getElementById("password").value;
   let objUsers = JSON.parse(localStorage.getItem('login', ''));
 
-  if (username === "" || password === "") {
+  if (username === null || password === null) {
     swal("Oops!", "Please enter username and password", "error");
     return;
   }
   //searches for matching username and password
   for (i = 0; i < objUsers.length; i++) {
-    if (username == objUsers[6].username && password == objUsers[6].passworld) { //changet  o password!!!!!
-      console.log("boom");
-      getUserTodos(objUsers[6]);
+    if (username == objUsers[i].username && password == objUsers[i].password) {
       post('../pages/todo.html', {login: username});
     }
     //if no match found, popup window error
@@ -33,15 +30,16 @@ function getInfo() {
   }
 }
 
-//creates new user and send to new user ToDo list
+/*creates new username and passworld in localStorage and submits username*/
 function joinTodo() {
-  console.log("join");
+  console.log("joinTodo");
   var username = document.getElementById("username").value;
   var password = document.getElementById("password").value;
   let login;
   let obj;
   
   obj = {};
+  //check is there are username and passwords stored in login localStorage
   if (localStorage.getItem('login') === null) {
     login = [];
   } else {
@@ -55,94 +53,31 @@ function joinTodo() {
       return;
     }
   }
-  //adds user and passworld to local storage
+  //adds user and passworld to localStorage
   obj["username"] = username;
   obj["password"] = password;
   login.push(obj);
-  localStorage.setItem('login', JSON.stringify(login));
+  localStorage.setItem("login", JSON.stringify(login));
 
-  //create input in to htmlindex
-  userTodo.id = obj.username;
   post('../pages/todo.html', {login: username});
 }
 
-//submit information to todo.html
-function post(path, params, method='post') {
-  const form = document.createElement('form');
+//submit information to todo.html of user
+function post(path, params, method="post") {
+  const form = document.createElement("form");
   form.action = path;
 
   for (const key in params) {
     if (params.hasOwnProperty(key)) {
-      const hiddenField = document.createElement('input');
-      // hiddenField.type = 'hidden';
+      const hiddenField = document.createElement("input");
       hiddenField.name = key;
       hiddenField.value = params[key];
       form.appendChild(hiddenField);
     }
   }
   document.body.appendChild(form);
-  // form.submit();
+  form.submit();
 }
-
-
-//get todo from local storage
-function getUserTodos(user){
-  console.log(userTodo.id);
-  let todos;
-
-  userTodo.id = user.username;
-  if (localStorage.getItem('todos') === null){
-    todos = [];
-  } else {
-    todos = JSON.parse(localStorage.getItem('todos'));
-  }
-  console.log(todos);
-  if (localStorage.getItem('filters') === null){
-    todos = [];
-  } else {
-    todos = JSON.parse(localStorage.getItem('filters'));
-  }
-  todos.forEach(function(todo) {
-    const todoDiv = document.createElement("div");
-    todoDiv.classList.add("todo");
-    //create li
-    var newTodo = document.createElement("li");
-    newTodo.classList.add("todo-item");
-    //create span in li
-    var span = document.createElement("span");
-    span.innerText = todo.todo;
-    span.id = "item-span";
-    newTodo.appendChild(span);
-    todoDiv.appendChild(newTodo);
-
-    //completed button
-    const completedButton = document.createElement("button");
-    completedButton.innerHTML = '<i class="fas fa-check"></i>';
-    completedButton.classList.add("completed-btn");
-    todoDiv.appendChild(completedButton);
-    
-     //edit button
-    const editButton = document.createElement("button");
-    editButton.innerHTML = '<i class="far fa-edit"></i>';
-    editButton.classList.add("edit-btn");
-    todoDiv.appendChild(editButton);
-
-    //deleted button
-    const deletedButton = document.createElement("button");
-    deletedButton.innerHTML = '<i class="fas fa-trash"></i>';
-    deletedButton.classList.add("deleted-btn");
-    todoDiv.appendChild(deletedButton);
-    
-    // add filter option to class
-    todoDiv.classList.toggle(todo.filter)
-
-    //append to list
-    todoLists.appendChild(todoDiv);
-  })
-  //add saved filters to filter
-  addSavedFilters(todos);
-}
-
 
 //stores current user in localStorage to recieve current user's todo list
 window.serialize = function(form) {
@@ -151,15 +86,15 @@ window.serialize = function(form) {
   }
   let currUser;
   currUser = [];
-    switch (form.elements[0].nodeName) {
-      case 'INPUT':
-        switch (form.elements[0].type) {
-          case 'text':
-          case 'submit':
-          currUser.push(encodeURIComponent(form.elements[0].value));
-          break;
-        }
+  switch (form.elements[0].nodeName) {
+    case "INPUT":
+      switch (form.elements[0].type) {
+        case "text":
+        case "submit":
+        currUser.push(encodeURIComponent(form.elements[0].value.replace(/ /g, '')));
+        break;
+      }
       break;
     }
-  localStorage.setItem('currUser', JSON.stringify(currUser));
+  localStorage.setItem("currUser", JSON.stringify(currUser));
 }

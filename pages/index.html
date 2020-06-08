@@ -44,7 +44,7 @@
           <label for="unm"><strong>Password</strong></label>
           <input placeholder="Enter password" name="pwd" id="password" required>
           <div class="buttons">
-            <button type="button" id="login-btn" class="login-btn">Log In</input>
+            <button type="button" id="login-btn" class="login-btn" onclick="getUserInfo()">Log In</input>
             <button type="button" class="join-btn" onclick="joinTodo()">Join</button>
           </div>
           <div class="cancel-container">
@@ -52,8 +52,8 @@
         </form>
       </div>
     </div>
-    <script src="../script/login.js"></script>
     <script src="../script/saveTodo.js"></script>
+    <script src="../script/login.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   </body>
 </html>

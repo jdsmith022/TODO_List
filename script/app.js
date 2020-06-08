@@ -16,21 +16,22 @@ filterOption.addEventListener("change", filterTodo);
 
 
 //Functions
-
 function addTodo(event) {
   //prevent form from submitting
+
+  console.log("hello there friend");
   event.preventDefault();
   
-  //todo div
+  //todo div for item
   const todoDiv = document.createElement("div");
   todoDiv.classList.add("todo");
 
-  
-  //create li
+  //create li for item
   var newTodo = document.createElement("li");
   if (todoInput.value == "")
     return;
   newTodo.classList.add("todo-item");
+  
   //create span in li
   var span = document.createElement("span");
   span.innerText = todoInput.value;
@@ -38,31 +39,30 @@ function addTodo(event) {
   newTodo.appendChild(span);
   todoDiv.appendChild(newTodo);
   
-  
-  //completed button
+  //add completed button to item
   const completedButton = document.createElement("button");
   completedButton.innerHTML = '<i class="fas fa-check"></i>';
   completedButton.classList.add("completed-btn");
   todoDiv.appendChild(completedButton);
   
-  //edit button
+  //add edit button to item
   const editButton = document.createElement("button");
   editButton.innerHTML = '<i class="far fa-edit"></i>';
   editButton.classList.add("edit-btn");
   todoDiv.appendChild(editButton);
   
-  //deleted button
+  //add deleted button to item
   const deletedButton = document.createElement("button");
   deletedButton.innerHTML = '<i class="fas fa-trash"></i>';
   deletedButton.classList.add("deleted-btn");
   todoDiv.appendChild(deletedButton);
   
-  //add filter option to class
+  //add filter option to class of item
   const optionClass = tagOption;
   optionClass.value = optionClass.value.toLowerCase();
   todoDiv.classList.toggle(optionClass.value)
   
-  //append to list
+  //append to li item to todo list
   todoList.appendChild(todoDiv);
   
   //save to local storage
@@ -72,8 +72,6 @@ function addTodo(event) {
   //clear todo input value
   todoInput.value = "";
 }
-
-
 
 function buttonCheck (e) {
   const item = e.target;
@@ -97,10 +95,9 @@ function buttonCheck (e) {
   }
 }
 
-
 function filterTodo(e) {
   const todos = todoList.childNodes;
-  todos.forEach(function(todo){
+  todos.forEach(function (todo){
     switch(e.target.value){
       case "all":
         todo.style.display = "flex";

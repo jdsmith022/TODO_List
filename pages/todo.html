@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../stylesheets/login.css" />
     <title>TODO list</title>
   </head>
-  <body">
+  <body onload="loadUserTodo()">
     <div class="container">
       <div class="card todo-card">
         <header class="todo-title">
@@ -42,9 +42,10 @@
         <button onclick="document.getElementById('login').style.display='flex'">Log out</button>
       </div> -->
     </div>
+    <script src="../script/getTodoList.js"></script>
     <script src="../script/saveTodo.js"></script>
-    <script src="../script/app.js"></script>
     <script src="../script/login.js"></script>
+    <script src="../script/app.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   </body>
 </html>
