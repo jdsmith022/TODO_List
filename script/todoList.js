@@ -71,7 +71,7 @@ function addTodo(event) {
 
   //clear todo input value
   todoInput.value = "";
-}
+};
 
 function buttonCheck (e) {
   const item = e.target;
@@ -94,7 +94,7 @@ function buttonCheck (e) {
     const todo = item.parentElement;
     editListItem(todo);
   }
-}
+};
 
 function filterTodo(e) {
   const todos = todoList.childNodes;
@@ -127,7 +127,7 @@ function filterTodo(e) {
         break;
       }
   });
-}
+};
 
 //add user input filter option to select filter
 function addOption(e){
@@ -148,7 +148,7 @@ function addOption(e){
   newOption.value = newOption.value.toLowerCase();
   filterOption.appendChild(newOption);
   tagOption.value = "";
-}
+};
 
 //edit item in list
 function editListItem(todo){
@@ -174,7 +174,7 @@ function editListItem(todo){
       }
     }
   })
-}
+};
 
 //edit item in list
 function updateCompleted(todo){
@@ -194,4 +194,4 @@ function updateCompleted(todo){
       return;
     }
   }
-}
+};
