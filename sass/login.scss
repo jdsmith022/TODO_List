@@ -3,6 +3,7 @@ body {
   height: 100vh;
   color: white !important;
   background-image: url("../images/2690662.jpg");
+  background-size: cover;
 }
 
 h1 {
@@ -34,7 +35,7 @@ h1 {
       }
       .card {
         border-radius: 10px;
-        border: 6.5px solid #18c8e1;
+        border: 5.5px solid #18c8e1;
         box-shadow: 5px 10px #a7a1a127;
         background-color: #160c30;
       }
@@ -67,7 +68,7 @@ h1 {
       height: 352px;
       background-color: #2f174c;
       margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-      border: 6.5px solid #18c8e1;
+      border: 5.5px solid #18c8e1;
       width: 30%;
       border-radius: 25px;
       input[id=username], input[id=password] {
@@ -75,7 +76,7 @@ h1 {
         padding: 12px 20px;
         margin: 8px 0;
         display: inline-block;
-        border: 6.5px solid #18c8e1;
+        border: 5.5px solid #18c8e1;
         box-sizing: border-box;
         border-radius: 11px;
         outline: none;
@@ -149,7 +150,7 @@ p {
 
 .card {
   border-radius: 10px;
-  border: 6.5px solid #18c8e1;
+  border: 5.5px solid #18c8e1;
   box-shadow: 5px 10px #a7a1a127;
   background-color: #160c30;
 }

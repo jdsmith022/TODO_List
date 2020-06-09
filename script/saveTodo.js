@@ -44,22 +44,3 @@ function removeLocalTodos(todo){
   todos = JSON.stringify(todos)
   localStorage.setItem(userName.toString(), todos);
 }
-
-// /*Remove filters that are not longer is use from filter options*/
-// function removeUnusedFilter(todo){
-//   const options = filterOption.children;
-//   let count;
-
-//   count = 0;
-//   console.log(options, filterOption, todo);
-//   for (var i = 0; i < filterOption.length; i++) {
-//     console.log(filterOption[i].value, todo.id);
-//     if (filterOption[i].value === todo.id) {
-//       count++
-//     }
-//   }
-//   console.log(count);
-//   if (count === 1) {
-//     filterOption[i] == null;
-//   }
-// }

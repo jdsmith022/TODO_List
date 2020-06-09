@@ -31,7 +31,7 @@
                 New to the Jessica's Todo List?
               </p>
               <div>
-                <button onclick="onJoin()">Join</button>
+                <button class="click-join">Join</button>
               </div>
              </div>
           </div>
@@ -43,7 +43,7 @@
                 Already have a list started?
               </p>
               <div>
-                <button onclick="onLogin()">User Login</button>
+                <button class="click-login">User Login</button>
               </div>
             </div>
           </div>
@@ -56,7 +56,7 @@
           <label for="unm"><strong>Password</strong></label>
           <input type="password" class="password" placeholder="Enter password" name="pwd" id="password" required>
           <div class="cancel-container">
-            <button type="button" onclick="document.getElementById('login').style.display='none'" class="cancel-btn">Cancel</button>
+            <button type="button" class="cancel-btn">Cancel</button>
             <div class="buttons">
               <button type="button" id="login-btn" class="login-btn" onclick="getUserInfo()">Log In</input>
               <button type="button" id="join-btn" class="join-btn" onclick="joinTodo()">Join</button>

@@ -212,17 +212,6 @@ select {
   transition: all 0.5s ease;
 }
 
-nav .navbar-nav .nav-item .nav-logout {
-  border: none;
-  background-color: transparent;
-  color: #600c1b;
-  font-size: medium;
-}
-nav .navbar-nav .nav-item .nav-logout:hover {
-  color: white;
-  background-color: #600c1b;
-}
-
 .fall {
   transform: translateY(8rem) rotateZ(20deg);
   opacity: 0;
@@ -230,7 +219,7 @@ nav .navbar-nav .nav-item .nav-logout:hover {
 
 .fa-trash,
 .fa-check,
-.fa-trash {
+.fa-edit {
   pointer-events: none;
 }
 

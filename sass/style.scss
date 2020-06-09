@@ -210,34 +210,16 @@ select {
   }
 }
 
-//navbar
-nav {
-  .navbar-nav {
-    .nav-item {
-      .nav-logout {
-        border: none;
-        background-color: transparent;
-        color: #600c1b;
-        font-size: medium;
-        &:hover {
-          color: white;
-          background-color: #600c1b;
-        }
-      }
-    }
-  }
-}
-
 //animations
 .fall {
   transform: translateY(8rem) rotateZ(20deg);
   opacity: 0;
 }
 
-//item buttons
+//item buttons icons
 .fa-trash,
 .fa-check,
-.fa-trash {
+.fa-edit {
   pointer-events: none;
 }
 

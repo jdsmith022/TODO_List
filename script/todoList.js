@@ -1,4 +1,4 @@
-//Selectors
+/*Selectors*/
 const todoInput = document.querySelector(".todo-input");
 const todoButton  = document.querySelector(".todo-button");
 const todoList = document.querySelector(".todo-list");
@@ -9,14 +9,14 @@ const todoForm = document.querySelector(".todo-form")
 const user = JSON.parse(localStorage.getItem("currUser", ''));
 
 
-//Event listeners
+/*Event listeners*/
 todoButton.addEventListener("click", addTodo);
 todoButton.addEventListener("click", addOption);
 todoList.addEventListener("click", buttonCheck);
 filterOption.addEventListener("change", filterTodo);
 
 
-//Functions
+/*Functions*/
 function addTodo(event) {
   //prevent form from submitting
   event.preventDefault();
