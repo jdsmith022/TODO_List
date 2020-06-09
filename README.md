@@ -1,7 +1,7 @@
 # TODO_List
 ## Vanilla Javascript ToDo Lisl in HTML and with SASS using local storage.
 
-![Demo of 42.fdf](https://github.com/jdsmith022/fdf_/blob/master/pictures/fdf.gif)
+![Demo of todoList](https://github.com/jdsmith022/TODO_List/blob/master/images/ezgif.com-crop.gif)
 
 ## Description
 First excercise completed in Vanilla Javascript. I will make better implementations as I learn. I chose to use Vanilla Javascript instead of jQuery in order to build a strong foundtion in understanding how Javascript works to then understand fully jQuery.
