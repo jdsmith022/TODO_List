@@ -5,11 +5,28 @@
   box-sizing: 0;
 }
 
+.logout-button {
+  padding: 36px 0px 0px 36px;
+  margin: auto;
+}
+.logout-button button {
+  outline: none;
+  box-shadow: none;
+  border: none;
+  padding: 8px 16px;
+  color: white;
+  background-color: #672b8a;
+}
+.logout-button button:hover {
+  background-color: white;
+  color: #672b8a;
+  border: 1px solid #672b8a;
+}
+
 .container {
   padding-top: 100px;
 }
 .container .todo-card {
-  background-image: linear-gradient(120deg, #e0455f, #44000b);
   color: white;
   border-radius: 25px;
 }
@@ -27,7 +44,7 @@
   margin-top: -72px;
 }
 .container .todo-card .user-todo .todo-form {
-  padding-top: 80px;
+  padding-top: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,7 +62,7 @@
   padding: 0.5rem;
   font-size: 1.25rem;
   background: white;
-  border: none;
+  border: 4px solid #c3279b;
   outline: none;
   border-radius: 25px;
 }
@@ -54,12 +71,13 @@
   box-shadow: none;
 }
 .container .todo-card .user-todo .todo-form button {
-  color: #600c1b;
+  color: #c3279b;
   background: white;
   cursor: pointer;
   transition: all 0.3 ease;
   border: none;
   outline: none;
+  border: 4px solid #c3279b;
 }
 .container .todo-card .user-todo .todo-form button button:focus {
   outline: none;
@@ -75,6 +93,7 @@
   justify-content: center;
   align-items: center;
   display: flex;
+  padding-top: 24px;
 }
 .container .todo-card .todo-container .todo-list {
   list-style: none;
@@ -89,6 +108,7 @@
   padding: 0rem 0.5rem;
 }
 .container .todo-card .todo-container .todo-list .todo {
+  border: 4px solid #1d90a0;
   margin: 0.5rem;
   background: white;
   color: black;
@@ -120,7 +140,7 @@
   color: white;
 }
 .container .todo-card .todo-container .todo-list .todo .edit-btn {
-  color: #38c0e9;
+  color: #369fbe;
 }
 .container .todo-card .todo-container .todo-list .todo .edit-btn:hover {
   background-color: #38c0e9;
@@ -133,24 +153,6 @@
   background-color: #d12e2e;
   color: white;
 }
-.container .logout-button {
-  padding: 16px 0px;
-  margin: auto;
-  text-align: center;
-}
-.container .logout-button button {
-  outline: none;
-  box-shadow: none;
-  border: none;
-  padding: 8px 16px;
-  color: white;
-  background-color: #df465e;
-}
-.container .logout-button button:hover {
-  background-color: white;
-  color: #df465e;
-  border: 1px solid #df465e;
-}
 
 select {
   -webkit-appearance: none !important;
@@ -159,7 +161,7 @@ select {
   outline: none !important;
   box-shadow: none !important;
   border: none !important;
-  color: #df465e;
+  color: #7d7d7d;
   width: 10rem;
   cursor: pointer;
   padding: 0.7rem;
@@ -174,12 +176,13 @@ select {
   margin: 1rem;
   position: relative;
   overflow: hidden;
+  border: 4px solid #c3279b;
   border-radius: 25px;
 }
 .select:after {
   content: "▾";
   position: absolute;
-  background: #600c1b;
+  background: #c3279b;
   top: 0;
   right: 0;
   padding: 0.7rem;

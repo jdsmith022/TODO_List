@@ -20,7 +20,7 @@ filterOption.addEventListener("change", filterTodo);
 function addTodo(event) {
   //prevent form from submitting
   event.preventDefault();
-  
+
   //todo div for item
   const todoDiv = document.createElement("div");
   todoDiv.classList.add("todo");
@@ -30,7 +30,7 @@ function addTodo(event) {
   if (todoInput.value == "")
     return;
   newTodo.classList.add("todo-item");
-  
+
   //create span in li
   var span = document.createElement("span");
   span.innerText = todoInput.value;
@@ -38,33 +38,33 @@ function addTodo(event) {
   span.contentEditable = "false";
   newTodo.appendChild(span);
   todoDiv.appendChild(newTodo);
-  
+
   //add completed button to item
   const completedButton = document.createElement("button");
   completedButton.innerHTML = '<i class="fas fa-check"></i>';
   completedButton.classList.add("completed-btn");
   todoDiv.appendChild(completedButton);
-  
+
   //add edit button to item
   const editButton = document.createElement("button");
   editButton.innerHTML = '<i class="far fa-edit"></i>';
   editButton.classList.add("edit-btn");
   todoDiv.appendChild(editButton);
-  
+
   //add deleted button to item
   const deletedButton = document.createElement("button");
   deletedButton.innerHTML = '<i class="fas fa-trash"></i>';
   deletedButton.classList.add("deleted-btn");
   todoDiv.appendChild(deletedButton);
-  
+
   //add filter option to class of item
   const optionClass = tagOption;
   optionClass.value = optionClass.value.toLowerCase();
   todoDiv.id = optionClass.value;
-  
+
   //append to li item to todo list
   todoList.appendChild(todoDiv);
-  
+
   //save to local storage
   tagOption.value = tagOption.value.toLowerCase();
   saveTodoLists(todoInput, tagOption);
