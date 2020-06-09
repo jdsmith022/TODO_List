@@ -139,13 +139,15 @@ window.serialize = function(form) {
 };
 
 /*form submit on enter*/
-password.addEventListener("keyup", function(event) {
-  if (event.keyCode === 13) {
-    event.preventDefault();
-    if (login.style.display = "flex") {
-      document.getElementById("login-btn").click();
-    } else {
-      document.getElementById("join-btn").click();
+if (password) {
+  password.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      if (login.style.display === "none") {
+        document.getElementById("join-btn").click();
+      } else {
+        document.getElementById("login-btn").click();
+      }
     }
-  }
-});
+  });
+};

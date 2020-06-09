@@ -1,13 +1,13 @@
 # TODO_List
-Vanilla Javascript ToDo List
+Vanilla Javascript ToDo Lisl in HTML and with SASS
 
 
-To update .css files from .scss files run command in terminal: 
+To update .css files from .scss files run command in terminal:
 ```
 sass --watch sass/:stylesheets
 ```
 
-To install sass command: 
+To install sass command:
 ```
 brew install sass/sass/sass
 ```

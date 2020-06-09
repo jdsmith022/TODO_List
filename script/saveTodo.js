@@ -33,7 +33,6 @@ function removeLocalTodos(todo){
   let todos;
 
   console.log(todo);
-  removeUnusedFilter(todo);
   if (localStorage.getItem(userName.toString()) === null) {
     todos = [];
   } else {

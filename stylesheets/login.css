@@ -12,7 +12,7 @@ h1 {
 
 .login-page .todo-title {
   text-align: center;
-  padding-bottom: 80px;
+  padding: 80px 0px;
 }
 .login-page .todo-title h1 {
   font-weight: bold;
