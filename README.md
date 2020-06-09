@@ -1,10 +1,10 @@
 # TODO_List
-## Vanilla Javascript ToDo Lisl in HTML using local storage.
+## Vanilla JavaScript ToDo List in HTML using local storage.
 
 ![Demo of todoList](https://github.com/jdsmith022/TODO_List/blob/master/images/ezgif.com-crop.gif)
 
 ## Description
-First exercise completed in Vanilla Javascript. I will make better implementations as I learn. I chose to use Vanilla Javascript instead of jQuery in order to build a strong foundtion in understanding how Javascript works to then understand fully jQuery.
+First exercise completed in Vanilla Javascript. I will make better implementations as I learn. I chose to use Vanilla JavaScript instead of jQuery in order to build a strong foundtion in understanding how JavaScript works to then understand fully jQuery.
 
 ### Installation
 
