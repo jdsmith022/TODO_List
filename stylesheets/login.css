@@ -1,12 +1,21 @@
+body {
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  color: white !important;
+  background-image: url("../images/2690662.jpg");
+}
+
 .login-page .todo-title {
   text-align: center;
+  padding-bottom: 80px;
 }
 .login-page .todo-title h1 {
   font-weight: bold;
   font-size: 64px;
+  padding: 36px 0px 8px 0px;
 }
 .login-page .todo-title p {
-  padding: 36px;
+  padding-bottom: 36px;
 }
 .login-page .user-welcome {
   text-align: center;
@@ -22,11 +31,12 @@
 }
 .login-page .user-welcome .card-content .card {
   border-radius: 10px;
-  border: 1.5px solid #df465e;
+  border: 6.5px solid #18c8e1;
   box-shadow: 5px 10px #a7a1a127;
+  background-color: #160c30;
 }
 .login-page .user-welcome .card-content .login-button, .login-page .user-welcome .card-content .join-button {
-  padding: 16px 0px;
+  padding: 16px 0px 24px 0px;
   margin: auto;
 }
 .login-page .user-welcome .card-content .login-button .join-paragraph, .login-page .user-welcome .card-content .join-button .join-paragraph {
@@ -51,32 +61,34 @@
   display: block;
   padding: 16px;
   height: 352px;
-  background-color: #fefefe;
+  background-color: #2f174c;
   margin: 5% auto 15% auto;
   /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #df465e;
-  width: 40%;
-}
-.login-page .login-form .login-content .buttons, .login-page .login-form .join-content .buttons, .login-page .join-form .login-content .buttons, .login-page .join-form .join-content .buttons {
-  outline: none;
-  text-align: center;
+  border: 6.5px solid #18c8e1;
+  width: 30%;
+  border-radius: 25px;
 }
 .login-page .login-form .login-content input[id=username], .login-page .login-form .login-content input[id=password], .login-page .login-form .join-content input[id=username], .login-page .login-form .join-content input[id=password], .login-page .join-form .login-content input[id=username], .login-page .join-form .login-content input[id=password], .login-page .join-form .join-content input[id=username], .login-page .join-form .join-content input[id=password] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  border: 6.5px solid #18c8e1;
   box-sizing: border-box;
+  border-radius: 11px;
+  outline: none;
 }
 .login-page .login-form .login-content .cancel-container, .login-page .login-form .join-content .cancel-container, .login-page .join-form .login-content .cancel-container, .login-page .join-form .join-content .cancel-container {
   padding: 8px;
-  text-align: center;
   padding-top: 40px;
 }
 .login-page .login-form .login-content .cancel-container .cancel-btn, .login-page .login-form .join-content .cancel-container .cancel-btn, .login-page .join-form .login-content .cancel-container .cancel-btn, .login-page .join-form .join-content .cancel-container .cancel-btn {
   margin: auto;
+}
+.login-page .login-form .login-content .cancel-container .buttons, .login-page .login-form .join-content .cancel-container .buttons, .login-page .join-form .login-content .cancel-container .buttons, .login-page .join-form .join-content .cancel-container .buttons {
   float: right;
+  outline: none;
+  text-align: center;
 }
 .login-page .login-form input, .login-page .login-form button, .login-page .join-form input, .login-page .join-form button {
   font-size: 1rem;
@@ -107,18 +119,18 @@ button {
   -webkit-appearance: none !important;
   outline: none;
   box-shadow: none;
-  border: 1px solid #df465e;
+  border: 1px solid #f32dc0;
   padding: 8px 16px;
   color: white;
-  background-color: #df465e;
+  background-color: #f32dc0;
   border-radius: 25px;
   font-size: 1.25rem;
   outline: none;
 }
 button:hover {
   background-color: white;
-  color: #df465e;
-  border: 1px solid #df465e;
+  color: #158191;
+  border: 1px solid #158191;
   outline: none;
 }
 
@@ -128,12 +140,19 @@ p {
 }
 
 .swal-button {
-  background-color: #df465e !important;
+  background-color: #158191 !important;
 }
 .swal-button:hover {
   background-color: white !important;
-  color: #df465e !important;
-  border: 1px solid #df465e !important;
+  color: #158191 !important;
+  border: 1px solid #158191 !important;
+}
+
+.card {
+  border-radius: 10px;
+  border: 6.5px solid #18c8e1;
+  box-shadow: 5px 10px #a7a1a127;
+  background-color: #160c30;
 }
 
 /*# sourceMappingURL=login.css.map */

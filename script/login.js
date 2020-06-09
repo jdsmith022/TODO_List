@@ -1,4 +1,4 @@
-/*Below are functions to handle login and join buttons. 
+/*Below are functions to handle login and join buttons.
 For this exercises, username, password, and todolist are saved in localStorage.
 This is very insecure and should not be used unless for such exercises*/
 
@@ -61,7 +61,7 @@ function getUserInfo() {
 function joinTodo() {
   let login;
   let obj;
-  
+
   if (username.value === null || password.value === null) {
     swal("Oops!", "Please enter username and password", "error");
     return;

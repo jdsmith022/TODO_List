@@ -14,12 +14,14 @@
   <body>
     <div class="container login-page">
       <header class="todo-title">
-        <h1>
-          Jessica's Todo List
-        </h1>
-        <p>
-          Write, save, and filter through you personal lists and check off
-        </p>
+        <div class="card">
+          <h1>
+            Jessica's Todo List
+          </h1>
+          <p>
+            Write, save, and filter through you personal lists and check off
+          </p>
+        </div>
       </header>
       <div class="user-welcome">
         <div class="card-content">
@@ -53,12 +55,13 @@
           <input class="username" placeholder="Enter username" name="unm" id="username" required>
           <label for="unm"><strong>Password</strong></label>
           <input type="password" class="password" placeholder="Enter password" name="pwd" id="password" required>
-          <div class="buttons">
-            <button type="button" id="login-btn" class="login-btn" onclick="getUserInfo()">Log In</input>
-            <button type="button" id="join-btn" class="join-btn" onclick="joinTodo()">Join</button>
-          </div>
           <div class="cancel-container">
             <button type="button" onclick="document.getElementById('login').style.display='none'" class="cancel-btn">Cancel</button>
+            <div class="buttons">
+              <button type="button" id="login-btn" class="login-btn" onclick="getUserInfo()">Log In</input>
+              <button type="button" id="join-btn" class="join-btn" onclick="joinTodo()">Join</button>
+            </div>
+          </div>
         </form>
       </div>
     </div>
