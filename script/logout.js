@@ -3,4 +3,4 @@
 function logoutUser() {
 	window.localStorage.removeItem("currUser");
 	window.location.replace('../pages/index.html');
-}
+};

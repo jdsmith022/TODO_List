@@ -8,18 +8,9 @@ const userTodo = document.getElementsByClassName(".user-todo");
 const username = document.querySelector(".username");
 const password = document.querySelector(".password");
 const objUsers = JSON.parse(localStorage.getItem("login", ""));
-const loginButton = document.querySelector(".click-login");
-const joinButton = document.querySelector(".click-join");
-const errorButton = document.querySelector(".cancel-btn");
 const form = document.getElementById('login');
 const join = document.getElementById('join-btn');
 const login = document.getElementById('login-btn');
-
-
-/*Event Listeners*/
-loginButton.addEventListener("click", onLogin);
-joinButton.addEventListener("click", onJoin);
-errorButton.addEventListener("click", onError);
 
 /*Shows window with only login button*/
 function onLogin() {
@@ -63,15 +54,15 @@ function getUserInfo() {
     if (username.value == objUsers[i].username && password.value == objUsers[i].password) {
       post('../pages/todo.html', {login: username.value});
     }
-    //if no match found, popup window error
-    if (i === objUsers.length - 1) {
-      onError();
-      swal("Inncorect username or password",
-      "We did not recognize your username or password. \
-      Please enter correct username and password or join Jessica's Todo List.",
-      "error");
-      return;
-    }
+  }
+  //if no match found, popup window error
+  if (i === objUsers.length - 1) {
+    onError();
+    swal("Inncorect username or password",
+    "We did not recognize your username or password. \
+    Please enter correct username and password or join Jessica's Todo List.",
+    "error");
+    return;
   }
 }
 
@@ -145,7 +136,7 @@ window.serialize = function(form) {
       break;
     }
   localStorage.setItem("currUser", JSON.stringify(currUser));
-}
+};
 
 /*form submit on enter*/
 password.addEventListener("keyup", function(event) {

@@ -160,4 +160,10 @@ p {
   background-color: #160c30;
 }
 
+@media (max-width: 768px) {
+  .login-page .login-form .login-content {
+    width: 75%;
+  }
+}
+
 /*# sourceMappingURL=login.css.map */

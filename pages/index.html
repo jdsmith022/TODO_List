@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="../stylesheets/style.css" />
+    <!-- <link rel="stylesheet" href="../stylesheets/style.css" /> -->
     <link rel="stylesheet" href="../stylesheets/login.css" />
     <title>TODO list</title>
   </head>
@@ -31,7 +31,7 @@
                 New to the Jessica's Todo List?
               </p>
               <div>
-                <button class="click-join">Join</button>
+                <button onclick="onJoin()">Join</button>
               </div>
              </div>
           </div>
@@ -43,7 +43,7 @@
                 Already have a list started?
               </p>
               <div>
-                <button class="click-login">User Login</button>
+                <button onclick="onLogin()">User Login</button>
               </div>
             </div>
           </div>
@@ -56,7 +56,7 @@
           <label for="unm"><strong>Password</strong></label>
           <input type="password" class="password" placeholder="Enter password" name="pwd" id="password" required>
           <div class="cancel-container">
-            <button type="button" class="cancel-btn">Cancel</button>
+            <button type="button" class="cancel-btn" onclick="onError()">Cancel</button>
             <div class="buttons">
               <button type="button" id="login-btn" class="login-btn" onclick="getUserInfo()">Log In</input>
               <button type="button" id="join-btn" class="join-btn" onclick="joinTodo()">Join</button>
