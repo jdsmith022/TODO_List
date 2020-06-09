@@ -1,10 +1,18 @@
 # TODO_List
+<<<<<<< HEAD
 ## Vanilla Javascript ToDo Lisl in HTML and with SASS using local storage
+=======
+## Vanilla JavaScript ToDo List in HTML using local storage.
+>>>>>>> f16e2e786bd64d84934eea02697f74245347b940
 
 ![Demo of todoList](https://github.com/jdsmith022/TODO_List/blob/master/images/ezgif.com-crop.gif)
 
 ## Description
+<<<<<<< HEAD
 First excercise completed entirely in Vanilla Javascript. I will make better implementations as I learn more and will make changes to this project along the way. I chose to use Vanilla Javascript instead of jQuery in order to build a strong foundtion in understanding how Javascript works so I may understand jQuery fully.
+=======
+First exercise completed in Vanilla Javascript. I will make better implementations as I learn. I chose to use Vanilla JavaScript instead of jQuery in order to build a strong foundtion in understanding how JavaScript works to then understand fully jQuery.
+>>>>>>> f16e2e786bd64d84934eea02697f74245347b940
 
 ### Installation
 
@@ -38,6 +46,5 @@ or
 npm install -g sass
 ```
 
-NOTE: Use of local storage is not secure for user login and shoud not be considered a realistic solution to user loging. This is an exercise in Vanilla JavaScript. I choose not to use jquery. As I am still new to Javascript, I wanted to be able to show I can learn and understand the basics of Javascript to build a strong foundation and move onto to use jquery, versus the other way around.
-
+NOTE: Use of local storage is not secure for user login and shoud not be considered a realistic solution for user login. This is an exercise in Vanilla JavaScript.
 Image used as background image is free for personal and commercial use. Can be found [here](https://www.freepik.com/free-vector/abstract-background-with-geometric-neon-shapes_5134390.htm).
