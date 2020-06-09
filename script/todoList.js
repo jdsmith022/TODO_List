@@ -163,7 +163,6 @@ function editListItem(todo){
     if (event.keyCode === 13) {
       event.preventDefault();
       input.contentEditable = "false";
-      console.log(item.id);
       for (var i = 0; i < currListState.length; i++) {
         //update localStorage
         if (todo.id === currListState[i]["filter"] &&  currSpanState === currListState[i]["todo"]) {
@@ -181,7 +180,6 @@ function updateCompleted(todo){
   let spanState = todo.querySelector("span").innerText;
   let currListState = JSON.parse(localStorage.getItem(user.toString(), ''));
 
-  console.log("here");
   for (var i = 0; i < currListState.length; i++) {
     //update localStorage of completed to true or false
     if (todo.id === currListState[i]["filter"] && spanState === currListState[i]["todo"]) {
