@@ -36,8 +36,9 @@ function removeLocalTodos(todo){
     objects = JSON.parse(localStorage.getItem(userName.toString()));
   }
   const todoIndex = todo.children[0].innerText;
-  const todoId = todo.children[0].id;
+  const todoId = todo.id;
   for (var i = 0; i < objects.length; i++) {
+    console.log(objects[i]["todo"], todoIndex, objects[i]["filter"], todoId)
     if (objects[i]["todo"] === todoIndex && objects[i]["filter"] == todoId) {
       objects.splice(i, 1);
       localStorage.setItem(userName.toString(), JSON.stringify(objects));
