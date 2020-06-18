@@ -3,7 +3,7 @@
 ## Vanilla Javascript ToDo Lisl in HTML and with SASS using local storage
 =======
 ## Vanilla JavaScript ToDo List in HTML using local storage.
->>>>>>> f16e2e786bd64d84934eea02697f74245347b940
+>>>>>>>
 
 ![Demo of todoList](https://github.com/jdsmith022/TODO_List/blob/master/images/ezgif.com-crop.gif)
 
